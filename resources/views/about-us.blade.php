@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Movie Mania</title>
+    <title>Chi siamo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -34,22 +34,31 @@
     </div>
   </div>
 </nav>
-
 <header>
     <div class="container-fluid header">
-   
-        <div class="row h-100">
-            <div class="col-12 d-flex justify-content-center align-items-center">
-             <h1 class="text-light display-1 fw-bold text-color">Movie Mania</h1>
-            
-             
+        <div class="row h-100 justify-content-around align-items-center">
+            <div class="col-6">
+
+            <h2 class="text-white text-color text-center">Chi siamo</h2>
+            <p class="text-white text-color">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores facilis ipsum ratione incidunt vel voluptatem iure voluptate officiis harum neque maiores, odio repudiandae fugit dicta consequuntur sunt autem quos velit?</p>
             </div>
-            
+
+            <div class="col-6">
+                <img src="/media/people-2557396_1280.jpg" alt="foto gruppo" class="shadow rounded">
+
+            </div>
         </div>
     </div>
 </header>
   <body>
-   
+    
+
+
+
+
+
+
+
 
 
 
@@ -58,6 +67,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
 

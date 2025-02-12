@@ -6,17 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/chi-siamo',function(){
+    return view('about-us');
+});
 
-
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/pagina1', function () {
-    return view('pagina1');
-})->name('pagina1');
-
-Route::get('/pagina2', function () {
-    return view('pagina2');
-})->name('pagina2');
-
+Route::get('/contatti', function(){
+    return view('contacts');
+});
