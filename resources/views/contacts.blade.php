@@ -10,7 +10,7 @@
     </header>
 
     <!-- Contatti -->
-    <section class="container my-5">
+    <section class="container-fluid my-5">
         <div class="row text-center">
             <div class="col-md-4">
                 <div class="box p-4 bg-dark text-white rounded">
@@ -31,7 +31,34 @@
                 </div>
             </div>
         </div>
+        <div class="row h-100 justify-content-center align-items-center">
+            <h2 class="text-white display-4 text-center text-color">...o Scrivici una mail</h2>
+            <div class="col-12 col-md-8">
+
+            <form>
+  <div class="mb-3">
+  <label for="user" class="form-label">Inserisci il tuo username</label>
+  <input type="text" class="form-control" id="email" aria-describedby="emailHelp">
+
+
+    <label for="email" class="form-label">Inserisci la tua mail</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3">
+    <label for="messaggio" class="form-label">Scrivi qui il tuo messaggio</label>
+    <input type="text" class="form-control" id="message">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+            
+            </div>
+        </div>
     </section>
+
+
 
    
 

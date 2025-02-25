@@ -22,23 +22,29 @@
 <section>
     <div class="container">
         <div class="row">
-            @foreach ($users as $user)
-             <div class="col-12 col-md-4">
-             <div class="card" style="width: 18rem;">
-     <div class="card-body">
-      <h5 class="card-title">{{$user['name'] . " " . $user['surname']}}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-      <a href="{{route('aboutUsDetail',['name'=>$user['name']])}}" class="card-link">Leggi di più</a>
-     </div>
-    </div>
-</div>
-</div>
-            </div>
-            
-            @endforeach
+            @if(isset($users) && !empty($users))
+                @foreach ($users as $user)
+                    <div class="col-12 col-md-4">
+                        <h3>{{ $user['name'] }}</h3>
+
+                        @if(isset($movies) && !empty($movies))
+                            @foreach ($movies as $movie)
+                                <x-card :movie="$movie" />
+                            @endforeach
+                        @else
+                            <p>Nessun film disponibile per questo utente.</p>
+                        @endif
+
+                    </div>
+                @endforeach
+            @else
+                <p>Nessun utente disponibile.</p>
+            @endif
         </div>
     </div>
 </section>
+
+
   
 
 
