@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Movie;
+
 
 
 class MovieController extends Controller
@@ -15,9 +17,11 @@ class MovieController extends Controller
         ['id'=> '4', 'title'=> 'A Queit Place', 'director'=>'John Krasinski', 'img'=>'/media/aqp.png', 'genres'=>'Horror'],
         ['id'=> '5', 'title'=> 'Red Notice' , 'director'=>'Rawson Marshall Thruber' , 'img'=>'/media/rednotice.png', 'genres'=>'Action Comedy'],
     ];
-   public function movieList(){
+   public function movieList()
+   {
+     $movies=Movie::all();
         
-        return view('movies', ['movies'=>$this->movies]);
+        return view('movie.movies', ['movies'=>$movies]);
     }
 
     public function movieDetail($id){
@@ -26,5 +30,25 @@ class MovieController extends Controller
                 return view('movie-detail' , ['movie'=>$movie]);
             }
         }
+
     }
+
+    public function create(){
+        return view('movie.create');
+    }
+
+
+
+    public function store(Request $request)
+{
+    $movie=Movie::create([
+        'title'=>$request->title,
+        'director'=>$request->director,
+        'year'=>$request->year,
+        'plot'=>$request->plot
+    ]);
+
+    return redirect()->route('homepage')->with('successMessage', 'Hai correttamente inserito il tuo film');
 }
+}
+

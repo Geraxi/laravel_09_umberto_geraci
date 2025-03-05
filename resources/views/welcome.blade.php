@@ -14,6 +14,13 @@
                 {{ session('emailError') }}
             </div>
         @endif
+        @if (session()->has('successMessage'))
+        <div class="alert alert-success">
+            {{ session('successMessage') }}
+        </div>
+        
+        @endif
+
      </div>
 
      <div class="container-fluid header">
