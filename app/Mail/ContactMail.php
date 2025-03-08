@@ -28,7 +28,7 @@ class ContactMail extends Mailable
     {
         return new Envelope(
             from: new Address('noreply@moviemania.it','No-reply'),
-            subject: 'Grazie per averci Contattato',
+            subject: 'Grazie per averci contattato',
         );
     }
 
@@ -38,7 +38,7 @@ class ContactMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.contact-mail',
         );
     }
 

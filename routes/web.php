@@ -19,6 +19,11 @@ Route::get('/movies',[MovieController::class,'movieList'] )-> name('movie.list')
 
 Route::get('/movie/detail/{id}',[MovieController::class, 'movieDetail'] )->name('movie.detail');
 
+//invio mail
+
+Route::post('/contact-us', [PublicController::class, 'contactUs'])->name('contactUs');
+
+
 Route::get('/movie/create', [MovieController::class, 'create'])->name('movie.create');
 
 Route::post('/movie/submit',[MovieController::class,'store'])->name('movie.submit');

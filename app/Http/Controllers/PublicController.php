@@ -47,18 +47,25 @@ class PublicController extends Controller
     $email=$request->input('email');
     $message= $request->input('message');
 
-    try{
+
+   try{
     Mail::to($email)->send(new ContactMail());
-    }catch(Exception $e){
-      return redirect()->route('homepage')->with('emailError',"C'è stato un problema con l'invio dell'email, per favore riprova più tardi");
+
+  }catch(Exception $e){
+     return redirect()->route('homepage')->with('emailError',"C'é stato un problema con l'invio della mail, per favore riprova più tardi");
+   
     }
-    return redirect(route('homepage'))->with('emailSent','Hai correttamente inviato un email');
+      return redirect()->route('homepage')->with('emailSent',"Hai correttamente inviato un email");
+    }
+
   }
+   
+  
 
 
 
 
-}
+
 
 
 
