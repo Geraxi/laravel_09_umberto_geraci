@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MovieRequest;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 
@@ -26,24 +27,37 @@ class MovieController extends Controller
         return view('movies.show', compact('movie')); // Returns the 'movies.show' view
     }
 
-    // Show the form to create a movie
+    // Show the movie creation form
     public function create()
     {
         return view('movies.create');
     }
 
     // Store new movie data
-    public function store(Request $request)
+    public function store(MovieRequest $request)
     {
+        // Validate the incoming request
         $request->validate([
             'title' => 'required|string|max:255',
             'director' => 'required|string|max:255',
             'year' => 'required|integer|min:1900|max:' . date('Y'),
             'plot' => 'nullable|string',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        Movie::create($request->only(['title', 'director', 'year', 'plot']));
+        // Handle image upload (if an image was uploaded)
+        $imagePath = $request->hasFile('img') ? $request->file('img')->store('movies', 'public') : null;
 
+        // Create the movie record in the database
+        Movie::create([
+            'title' => $request->title,
+            'director' => $request->director,
+            'year' => $request->year,
+            'plot' => $request->plot,
+            'img' => $imagePath
+        ]);
+
+        // Redirect to the movie list with a success message
         return redirect()->route('movies.index')->with('successMessage', 'Movie added successfully!');
     }
 }
