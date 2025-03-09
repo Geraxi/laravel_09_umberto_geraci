@@ -2,7 +2,9 @@
 
      <header>
 
-     <div class="container-fluid header">
+     
+
+     <div class="container-fluid">
         @if (session()->has('emailSent'))
             <div class="alert alert-success">
                 {{ session('emailSent') }}

@@ -1,7 +1,7 @@
 /* Header Homepage*/
 
 .header{
-    background-image: url('./media/theater-8569119_1280.jpg');
+    background-image: url('/public/media/cinema1.jpg');
     height: 95vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@
 /*  movies  */
 
 .movies{
-    background-image: url('./media/theater-8569119_1280.jpg');
+    background-image: url('/public/media/theater-8569119_1280.jpg');
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;

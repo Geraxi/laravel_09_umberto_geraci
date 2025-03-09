@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\MovieController;
@@ -18,6 +19,11 @@ Route::get('/contatti', function(){
 Route::get('/movies',[MovieController::class,'movieList'] )-> name('movie.list');
 
 Route::get('/movie/detail/{id}',[MovieController::class, 'movieDetail'] )->name('movie.detail');
+
+
+//ArticleController
+
+Route::get('/article/create',[ArticleController::class,'create'])->name('article.create')->middleware('auth');
 
 //invio mail
 

@@ -8,6 +8,7 @@ use App\Models\Movie;
 use Illuminate\Support\Facades\DB;
 
 
+
 class MovieController extends Controller
 
 {

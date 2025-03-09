@@ -11,7 +11,7 @@
             </div>
 
             <div class="col-6">
-                <img src="/media/people-2557396_1280.jpg" alt="foto gruppo" class="shadow rounded">
+                <img src="/media/people-2557396_1280.jpg" alt="foto gruppo" class="shadow rounded justify-content-around align-items-center">
 
             </div>
         </div>

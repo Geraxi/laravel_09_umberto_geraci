@@ -1,9 +1,7 @@
 <x-layout>
 
   <!-- Navbar-->
-
-
-
+ <x-navbar></x-navbar>
 
 <header>
     <div class="container-fluid movies">
