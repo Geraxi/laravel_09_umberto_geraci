@@ -16,14 +16,14 @@ Route::get('/contatti', function(){
     return view('contacts');
 })->name('contacts');
 
-Route::get('/movies',[MovieController::class,'movieList'] )-> name('movie.list');
+Route::get('/movies',[MovieController::class,'index'] )-> name('movie.index');
 
 Route::get('/movie/detail/{id}',[MovieController::class, 'movieDetail'] )->name('movie.detail');
 
 
-//ArticleController
+//CRUD
 
-Route::get('/article/create',[ArticleController::class,'create'])->name('article.create')->middleware('auth');
+Route::get('/movie/create',[MovieController::class,'create'])->name('movie.create')->middleware('auth');
 
 //invio mail
 
@@ -33,3 +33,16 @@ Route::post('/contact-us', [PublicController::class, 'contactUs'])->name('contac
 Route::get('/movie/create', [MovieController::class, 'create'])->name('movie.create');
 
 Route::post('/movie/submit',[MovieController::class,'store'])->name('movie.submit');
+
+Route::get('/movie/index',[MovieController::class,'index'])->name('movie.index');
+
+//Show movie
+
+Route::get('/movie/show/{movie}',[MovieController::class,'show'])->name('movie.show');
+Route::get('/movie/edit{movie}', [MovieController::class, 'edit'])->name('movie.edit');
+Route::put('/movie/update{movie}', [MovieController::class, 'update'])->name('movie.update');
+Route::delete('/movie/delete/{movie}', [MovieController::class, 'destroy'])->name('movie.delete');
+
+//profilo
+
+Route::get('/user/profile',[PublicController::class,'profile'])->name('user.profile');
