@@ -58,11 +58,12 @@ class PublicController extends Controller
       return redirect()->route('homepage')->with('emailSent',"Hai correttamente inviato un email");
     }
 
-    public function profile(){
-      return view('profile');
-    }
-
+    public function profile() {
+      return view('movie.profile');
   }
+  
+
+}
    
   
 

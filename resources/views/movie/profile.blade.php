@@ -2,7 +2,10 @@
  <div class="row justify-content-center">
     <div class="container-fluid movies">
         <div class="row">
-            <h2 class="text-white text-color text-center">Profilo di {{ Auth::user()->name }}</h2>
+        <h2 class="text-white text-color text-center">
+    Profilo di {{ Auth::check() ? Auth::user()->name : 'Ospite' }}
+</h2>
+
             <h3 class="text-white text-center text-color"></h3>
             <a href="{{ route('movie.create') }}" class="btn btn-outline-warning">Pubblica il tuo primo film</a>
             @forelse (Auth::user()->movies as $movie)
