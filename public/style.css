@@ -1,6 +1,6 @@
 /* Header Homepage */
 .header {
-    background-image: url("{{ asset('media/cinema1.jpg') }}");
+    background-image: url('/media/cinema1.jpg');
     height: 95vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,7 +36,7 @@
 
 /* Movies */
 .movies {
-    background-image: url("{{ asset('media/theater-8569119_1280.jpg') }}");
+    background-image: url('/media/cinema1.jpg');
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;

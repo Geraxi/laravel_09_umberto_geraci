@@ -6,6 +6,8 @@ use App\Http\Requests\MovieRequest;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Genre;
+
 
 class MovieController extends Controller
 {
@@ -17,7 +19,8 @@ class MovieController extends Controller
 
     public function create()
     {
-        return view('movie.create');
+        $genres= Genre::all();
+        return view('movie.create',compact('genres'));
     }
 
     public function store(MovieRequest $request)
@@ -30,6 +33,8 @@ class MovieController extends Controller
             'img' => $request->file('img')->store('public/images'),
             'user_id' => Auth::id()
         ]);
+
+        $movie->genres()->attach($request->genres);
 
         return redirect()->route('homepage')->with('successMessage', 'Hai correttamente inserito il tuo film!');
     }

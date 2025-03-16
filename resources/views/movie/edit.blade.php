@@ -16,12 +16,12 @@
   </div>
   <div class="mb-3">
     <label for="director" class="form-label">Regista:</label>
-    <input type="text" name="director" class="form-control" id="exampleInputPassword1">
+    <input type="text" name="director" class="form-control" id="director">
   </div>
 
   <div class="mb-3">
     <label for="year" class="form-label">Anno di uscita:</label>
-    <input type="text" name="director" class="form-control" id="exampleInputPassword1">
+    <input type="text" name="year" class="form-control" id="year">
   </div>
 
   <div class="mb-3">
