@@ -40,6 +40,13 @@ class PublicController extends Controller
   {
     return view('contacts');
   } 
+
+  public function create()
+{
+    return view('auth.register'); // Se il file è in resources/views/auth/
+}
+
+
   
   public function contactUs(Request $request)
   {

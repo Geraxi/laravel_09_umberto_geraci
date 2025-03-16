@@ -7,6 +7,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\MovieController;
 
 
+
 Route::get('/',[PublicController::class, 'homepage'] )->name('homepage');
 
 Route:: get('/chi-siamo',[PublicController::class, 'aboutUs'])->name('aboutUs');
@@ -49,10 +50,15 @@ Route::delete('/movie/delete/{movie}', [MovieController::class, 'destroy'])->nam
 Route::get('/user/profile',[PublicController::class,'profile'])->name('user.profile');
 
 
+Route::get('/register', [PublicController::class, 'create'])->name('register');
+
+
+
+
 
 //Genre
 
 Route::get('/genre/create',[GenreController::class,'create'])->name('genre.create');
-Route::post('/genre/create/submit',[GenreController::class,'store'])->name('genre.submit');
+Route::post('/genre/create/submgisterit',[GenreController::class,'store'])->name('genre.submit');
 Route::get('/genre/index',[GenreController::class,'index'])->name('genre.index');
 Route::get('/genre/show/{genre}',[GenreController::class,'show'])->name('genre.show');

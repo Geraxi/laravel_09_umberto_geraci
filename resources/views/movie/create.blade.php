@@ -5,7 +5,7 @@
 
         <h2 class="display-4 text-center">Inserisci il tuo film preferito</h2>
 
-        <form method="POST" action="{{ route('movie.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('movie.create') }}" enctype="multipart/form-data">
           @csrf
 
           <div class="mb-3">
