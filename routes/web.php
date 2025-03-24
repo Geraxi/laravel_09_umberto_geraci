@@ -25,7 +25,7 @@ Route::get('/movie/detail/{id}',[MovieController::class, 'movieDetail'] )->name(
 
 //CRUD
 
-Route::get('/movie/create',[MovieController::class,'create'])->name('movie.create')->middleware('auth');
+Route::post('/movie/create',[MovieController::class,'create'])->name('movie.create')->middleware('auth');
 
 //invio mail
 
@@ -58,7 +58,7 @@ Route::get('/register', [PublicController::class, 'create'])->name('register');
 
 //Genre
 
-Route::get('/genre/create',[GenreController::class,'create'])->name('genre.create');
+Route::post('/genre/create',[GenreController::class,'create'])->name('genre.create');
 Route::post('/genre/create/submgisterit',[GenreController::class,'store'])->name('genre.submit');
 Route::get('/genre/index',[GenreController::class,'index'])->name('genre.index');
 Route::get('/genre/show/{genre}',[GenreController::class,'show'])->name('genre.show');
